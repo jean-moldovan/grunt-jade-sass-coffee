@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         options: {
           port: 9001,
           hostname: 'localhost',
-          base: 'src/public',
+          base: 'public',
           livereload: true,
           keepalive: true,
           open: {
