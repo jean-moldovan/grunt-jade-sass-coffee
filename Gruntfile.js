@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'src/public/style.css' : 'src/sass/**/*.scss'
+          'public/style.css' : 'src/sass/**/*.scss'
         }
       }
     },
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          'src/public/index.html' : 'src/jade/*.jade'
+          'public/index.html' : 'src/jade/*.jade'
         }
       }
     },
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'src/public/app.js' : 'src/coffee/*.coffee'
+          'public/app.js' : 'src/coffee/*.coffee'
         }
       }
     },
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
         options: {
           port: 9001,
           hostname: 'localhost',
-          base: 'src/public/static',
+          base: 'src/public',
           livereload: true,
           keepalive: true,
           open: {
@@ -89,10 +89,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-reload');
-  grunt.loadNpmTasks('grunt-webfont');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', 'reload', 'watch');
+  grunt.registerTask('default', 'connect', 'watch');
 
 };
