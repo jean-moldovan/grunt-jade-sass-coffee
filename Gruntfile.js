@@ -91,6 +91,4 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-reload');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', 'connect', 'watch');
-
 };
